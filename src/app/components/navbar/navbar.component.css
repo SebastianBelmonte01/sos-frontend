@@ -1,0 +1,12 @@
+.aldeas {
+  background-color: #4D9DDE;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.navbar-option {
+  color: aliceblue;
+  font-size: 0.8rem;
+}
