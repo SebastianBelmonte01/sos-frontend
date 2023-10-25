@@ -15,6 +15,7 @@ import { NumbersComponent } from './components/numbers/numbers.component';
 import {FormsModule} from "@angular/forms";
 import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import { CombOperationsComponent } from './pages/comb-operations/comb-operations.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     BasicOperationsComponent,
     ButtonComponent,
     NumbersComponent,
-    SnackBarComponent
+    SnackBarComponent,
+    CombOperationsComponent
   ],
   imports: [
     BrowserModule,
