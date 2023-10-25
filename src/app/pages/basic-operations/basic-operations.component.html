@@ -1,1 +1,33 @@
-<p>basic-operations works!</p>
+<app-navbar></app-navbar>
+<div class="container center-content">
+
+  <div class="numbers">
+    <app-numbers [myNumber]="operation"></app-numbers>
+    <div>
+      <app-numbers [myNumber]=this.firstNumber.toString()></app-numbers>
+      <app-numbers [myNumber]=this.secondNumber.toString()></app-numbers>
+      <div>_________</div>
+      <input [(ngModel)]="this.inputValue" class="custom-input" >
+    </div>
+
+    <app-button
+      [buttonSize]="'large'"
+      [buttonText]="'Nueva Operacion'"
+      (onClick)="handleButtonClick()"
+    ></app-button>
+  </div>
+
+  <app-button
+    [buttonSize]="'large'"
+    [buttonText]="'Verificar Respuesta'"
+    (onClick)="openSnackBar()"
+  ></app-button>
+
+
+
+</div>
+
+
+
+
+
