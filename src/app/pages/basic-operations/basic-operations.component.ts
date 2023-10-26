@@ -15,30 +15,24 @@ export class BasicOperationsComponent{
   operation: string = '+';
   inputValue: number = 0;
   isCorrect: boolean = false;
+  digitsQuantity: number = 2;
 
   constructor(private _snackBar: MatSnackBar) {
-    this.firstNumber = Math.floor(Math.random() * (999 - 10 + 1) + 10);
-    this.secondNumber = Math.floor(Math.random() * (999 - 10 + 1) + 10);
-    this.operation = this.operations[Math.floor(Math.random() * this.operations.length)];
+   this.setDigits(this.digitsQuantity)
     this.result = this.operation === '+' ? this.firstNumber + this.secondNumber : this.firstNumber - this.secondNumber;
-    console.log(this.result)
-
   }
 
   handleButtonClick() {
-    this.firstNumber = Math.floor(Math.random() * (999 - 10 + 1) + 10);
-    this.secondNumber = Math.floor(Math.random() * (999 - 10 + 1) + 10);
+    this.setDigits(this.digitsQuantity)
     this.operation = this.operations[Math.floor(Math.random() * this.operations.length)];
     this.result = this.operation === '+' ? this.firstNumber + this.secondNumber : this.firstNumber - this.secondNumber;
     this.inputValue = 0;
-    console.log("Resultadi")
+    console.log("Resultado")
     console.log(this.result)
   }
 
   openSnackBar() {
-    console.log(this.result, this.inputValue)
     this.isCorrect = this.result == this.inputValue;
-    console.log(this.isCorrect)
     if (this.isCorrect) {
       this._snackBar.openFromComponent(SnackBarComponent, {
         duration: 10 * 1000,
@@ -53,5 +47,30 @@ export class BasicOperationsComponent{
       });
     }
   }
+
+  setOperation(operation: string) {
+    this.operation = operation;
+    this.result = this.operation === '+' ? this.firstNumber + this.secondNumber : this.firstNumber - this.secondNumber;
+    console.log(this.result)
+  }
+
+  setDigits(digits: number) {
+    this.digitsQuantity = digits;
+    if (this.digitsQuantity === 1) {
+      this.firstNumber = Math.floor(Math.random() * (9 - 1 + 1) + 1);
+      this.secondNumber = Math.floor(Math.random() * (9 - 1 + 1) + 1);
+    }
+    else if (this.digitsQuantity === 2) {
+      this.firstNumber = Math.floor(Math.random() * (99 - 10 + 1) + 10);
+      this.secondNumber = Math.floor(Math.random() * (99 - 10 + 1) + 10);
+    }
+    else if (this.digitsQuantity === 3) {
+      this.firstNumber = Math.floor(Math.random() * (999 - 100 + 1) + 100);
+      this.secondNumber = Math.floor(Math.random() * (999 - 100 + 1) + 100);
+    }
+    this.setOperation(this.operation)
+  }
+
+
 
 }

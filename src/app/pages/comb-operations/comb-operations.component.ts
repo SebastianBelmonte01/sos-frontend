@@ -11,7 +11,7 @@ export class CombOperationsComponent {
   firstNumber: number = 0;
   secondNumber: number = 0;
   result: number = 0;
-  operations: string[] = ['+', '-', 'x', '/'];
+  operations: string[] = ['+', '-', 'x', '%'];
   operation: string = '+';
   inputValue: number = 0;
   isCorrect: boolean = false;
@@ -29,7 +29,7 @@ export class CombOperationsComponent {
     else if(this.operation === 'x'){
       this.result = this.firstNumber * this.secondNumber;
     }
-    else if(this.operation === '/'){
+    else if(this.operation === '%'){
       this.result = this.firstNumber / this.secondNumber;
       console.log("Division")
       this.result = parseFloat(this.result.toFixed(2))
@@ -51,7 +51,7 @@ export class CombOperationsComponent {
     else if(this.operation === 'x'){
       this.result = this.firstNumber * this.secondNumber;
     }
-    else if(this.operation === '/'){
+    else if(this.operation === '%'){
       this.result = this.firstNumber / this.secondNumber;
       console.log("Division")
       this.result = parseFloat(this.result.toFixed(2))

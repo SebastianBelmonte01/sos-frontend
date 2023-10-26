@@ -8,5 +8,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 export class ButtonComponent {
   @Input() buttonSize: string = 'default'; // Default size
   @Input() buttonText: string = 'Button Text';
+  @Input() styleClass: string = 'button'; // Default style
   @Output() onClick: EventEmitter<void> = new EventEmitter<void>();
+
 }

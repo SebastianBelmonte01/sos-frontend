@@ -3,7 +3,10 @@
 }
 .center-content{
   text-align: center;
+}
 
+.gap{
+  margin: 2rem;
 }
 .numbers{
   display: grid;
