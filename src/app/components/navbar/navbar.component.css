@@ -1,13 +1,25 @@
 .aldeas {
   background-color: #4D9DDE;
+
+  /* Puedes añadir estilos adicionales aquí como un padding si lo consideras necesario. */
+  padding: 10px 20px;
+
+  .logo {
+      width: 100px; /* Asegúrate de tener un elemento con la clase .logo si vas a usar este estilo */
+  }
+
+
+}
+.navbar-option{
+  color: aliceblue;
+  font-size: 0.8rem;
+  margin: 5px;
 }
 
 .spacer {
   flex: 1 1 auto;
 }
-
-.navbar-option {
+.aldeas a[mat-button], .aldeas button[mat-button] {
   color: aliceblue;
-  font-size: 0.8rem;
-  margin: 5px;
+  cursor: pointer;
 }

@@ -16,6 +16,12 @@ import {FormsModule} from "@angular/forms";
 import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import { CombOperationsComponent } from './pages/comb-operations/comb-operations.component';
+import { NumberIdentificationComponent } from './pages/number-identification/number-identification.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { AntecesorSucesorComponent } from './pages/antecesor-sucesor/antecesor-sucesor.component';
+import { UnidadesDecenasCentenasComponent } from './pages/unidades-decenas-centenas/unidades-decenas-centenas.component';
+import { RectaNumericaComponent } from './pages/recta-numerica/recta-numerica.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +32,12 @@ import { CombOperationsComponent } from './pages/comb-operations/comb-operations
     ButtonComponent,
     NumbersComponent,
     SnackBarComponent,
-    CombOperationsComponent
+    CombOperationsComponent,
+    NumberIdentificationComponent,
+    AntecesorSucesorComponent,
+    UnidadesDecenasCentenasComponent,
+    RectaNumericaComponent
+
   ],
   imports: [
     BrowserModule,
@@ -36,7 +47,8 @@ import { CombOperationsComponent } from './pages/comb-operations/comb-operations
     MatToolbarModule,
     MatIconModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

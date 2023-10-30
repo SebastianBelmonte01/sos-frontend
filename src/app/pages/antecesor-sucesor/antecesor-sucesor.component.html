@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <h2>Antecesor y Sucesor</h2>
+    
+    <div class="number-section">
+      <div class="input-container">
+        <label for="predecessor">Antecesor:</label>
+        <input type="number" id="predecessor" [(ngModel)]="predecessor">
+      </div>
+      
+      <div class="number-display">
+        Número: {{ currentNumber }}
+      </div>
+  
+      <div class="input-container">
+        <label for="successor">Sucesor:</label>
+        <input type="number" id="successor" [(ngModel)]="successor">
+      </div>
+    </div>
+    <app-button
+    [buttonSize]="'large'"
+    [buttonText]="'Verificar'"
+    [styleClass]="'button'"
+    (onClick)="checkAnswer()"
+  ></app-button>
+  <br>
+    <app-button
+    [buttonSize]="'large'"
+    [buttonText]="'Generar Nuevo Número'"
+    [styleClass]="'button'"
+    (onClick)="generateRandomNumber()"
+    ></app-button>
+
+  </div>
+  

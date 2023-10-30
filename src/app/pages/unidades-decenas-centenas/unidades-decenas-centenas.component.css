@@ -1,0 +1,30 @@
+.udc-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.number-display {
+    font-size: 2rem;
+    margin: 20px 0;
+    border: 2px solid black;
+    padding: 10px;
+    display: inline-block;
+}
+
+.options button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.options button:hover {
+    background-color: #ddd;
+}
+
+.feedback {
+    margin-top: 20px;
+    color: #4D9DDE;
+    font-weight: bold;
+}

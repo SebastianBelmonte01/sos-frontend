@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="instruction-box">
+      Ubica el número: <span>{{ randomNumber }}</span>
+    </div>
+    <div class="number-line">
+      <span class="line" *ngFor="let number of numbers" (mouseover)="showNumber(number)" (mouseout)="hideNumber()" (click)="checkNumber(number +1)">
+        <span class="number" *ngIf="isHovered && hoveredNumber === number">{{ number }}</span>
+      </span>
+    </div>
+    <div class="feedback" [ngClass]="{'correct': isCorrect, 'error': !isCorrect}" *ngIf="feedbackVisible">
+      {{ feedbackMessage }}
+    </div>
+</div>

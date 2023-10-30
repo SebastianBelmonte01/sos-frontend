@@ -5,6 +5,13 @@
       <img src="assets/sos.png" alt="SOS">
     </div>
     <div class="spacer"></div>
+    <a mat-button [matMenuTriggerFor]="primaryMenu" class="opciones">PRIMERO</a>
+    <mat-menu #primaryMenu="matMenu">
+        <button mat-menu-item routerLink="/number-identification">Identificación de Cantidades y Números</button>
+        <button mat-menu-item routerLink="/antecesor-sucesor">Antecesor y Sucesor</button>
+        <button mat-menu-item routerLink="/unidades-decenas-centenas">Unidades, Decenas, Centenas</button>
+        <button mat-menu-item routerLink="/recta-numerica">Reconocimiento de la Recta Numérica</button>
+    </mat-menu>
     <a routerLink="/operations/basic" mat-button class="navbar-option">
       <mat-icon>calculate</mat-icon>
       Operaciones básicas

@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+<div class="udc-container">
+    <h2>Clasifica el Número</h2>
+
+    <div class="number-display">
+        {{ currentNumber }}
+    </div>
+
+    <div class="options">
+        <app-button
+        [buttonSize]="'large'"
+        [buttonText]="'Unidad'"
+        [styleClass]="'button'"
+        (onClick)="checkAnswer('unidad')"
+      ></app-button>
+      
+      <app-button
+      [buttonSize]="'large'"
+      [buttonText]="'Decena'"
+      [styleClass]="'button'"
+      (onClick)="checkAnswer('decena')"
+    ></app-button>
+    <app-button
+    [buttonSize]="'large'"
+    [buttonText]="'Centena'"
+    [styleClass]="'button'"
+    (onClick)="checkAnswer('centena')"
+  ></app-button>
+
+    </div>
+
+    <div class="feedback" *ngIf="feedbackMessage">
+        {{ feedbackMessage }}
+    </div>
+
+    <app-button
+    [buttonSize]="'large'"
+    [buttonText]="'Otro número'"
+    [styleClass]="'button'"
+    (onClick)="generateNumber()"
+  ></app-button>
+</div>
