@@ -3,28 +3,9 @@
   <div class="numbers">
     <div>
       <app-numbers [myNumber]="operation"></app-numbers>
-      <div class="gap">
-        <app-button
-          [buttonSize]="'large'"
-          [buttonText]="'+'"
-          [styleClass]="'button-squared'"
-          (onClick)="setOperation('+')"
-        ></app-button>
-      </div>
-
-      <div class="gap">
-        <app-button
-          [buttonSize]="'large'"
-          [buttonText]="'-'"
-          [styleClass]="'button-squared'"
-          (onClick)="setOperation('-')"
-        ></app-button>
-      </div>
-
     </div>
     <div>
       <app-numbers [myNumber]=this.firstNumber.toString()></app-numbers>
-      <app-numbers [myNumber]=this.secondNumber.toString()></app-numbers>
       <div>_________</div>
       <input [(ngModel)]="this.inputValue" class="custom-input" >
     </div>
@@ -70,10 +51,3 @@
   </button>
 
 </div>
-
-
-
-
-
-
-

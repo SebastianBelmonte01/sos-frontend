@@ -24,6 +24,7 @@ import { RectaNumericaComponent } from './pages/recta-numerica/recta-numerica.co
 import {MatButtonModule} from "@angular/material/button";
 import { DialogComponent } from './components/dialog/dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import { SquaresComponent } from './pages/squares/squares.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import {MatDialogModule} from "@angular/material/dialog";
     AntecesorSucesorComponent,
     UnidadesDecenasCentenasComponent,
     RectaNumericaComponent,
-    DialogComponent
+    DialogComponent,
+    SquaresComponent
 
   ],
   imports: [

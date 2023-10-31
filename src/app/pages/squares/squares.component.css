@@ -1,0 +1,37 @@
+.container{
+  font-size: 5rem;
+}
+.center-content{
+  text-align: center;
+}
+
+.gap{
+  margin: 2rem;
+}
+.numbers{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+  margin: 5rem;
+}
+
+.numbers input {
+  margin: 3rem;
+}
+
+.custom-input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.custom-input:focus {
+  border-color: #007bff; /* Change the border color when the input is focused */
+}
+
+
+
