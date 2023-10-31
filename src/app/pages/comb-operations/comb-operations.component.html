@@ -2,7 +2,47 @@
 <div class="container center-content">
 
   <div class="numbers">
-    <app-numbers [myNumber]="operation"></app-numbers>
+    <div>
+      <app-numbers [myNumber]="operation"></app-numbers>
+      <div class="gap">
+        <app-button
+          [buttonSize]="'large'"
+          [buttonText]="'+'"
+          [styleClass]="'button-squared'"
+          (onClick)="setOperation('+')"
+        ></app-button>
+      </div>
+
+      <div class="gap">
+        <app-button
+          [buttonSize]="'large'"
+          [buttonText]="'-'"
+          [styleClass]="'button-squared'"
+          (onClick)="setOperation('-')"
+        ></app-button>
+      </div>
+
+      <div class="gap">
+        <app-button
+          [buttonSize]="'large'"
+          [buttonText]="'x'"
+          [styleClass]="'button-squared'"
+          (onClick)="setOperation('x')"
+        ></app-button>
+      </div>
+
+      <div class="gap">
+        <app-button
+          [buttonSize]="'large'"
+          [buttonText]="'÷'"
+          [styleClass]="'button-squared'"
+          (onClick)="setOperation('÷')"
+        ></app-button>
+      </div>
+
+
+
+    </div>
     <div>
       <app-numbers [myNumber]=this.firstNumber.toString()></app-numbers>
       <app-numbers [myNumber]=this.secondNumber.toString()></app-numbers>
@@ -10,19 +50,51 @@
       <input [(ngModel)]="this.inputValue" class="custom-input" >
     </div>
 
-    <app-button
-      [buttonSize]="'large'"
-      [buttonText]="'Nueva Operacion'"
-      (onClick)="handleButtonClick()"
-    ></app-button>
-  </div>
+    <div>
+      <div class="gap">
+        <app-button
+          [buttonSize]="'large'"
+          [buttonText]="'Un Dígito'"
+          [styleClass]="'button'"
+          (onClick)="setDigits(1)"
+        ></app-button>
+      </div>
+      <div class="gap">
+        <app-button
+          [buttonSize]="'large'"
+          [buttonText]="'Dos Dígitos'"
+          [styleClass]="'button'"
+          (onClick)="setDigits(2)"
+        ></app-button>
+      </div>
+      <div class="gap">
+        <app-button
+          [buttonSize]="'large'"
+          [buttonText]="'Tres Dígitos'"
+          [styleClass]="'button'"
+          (onClick)="setDigits(3)"
+        ></app-button>
+      </div>
+    </div>
 
+
+  </div>
   <app-button
     [buttonSize]="'large'"
     [buttonText]="'Verificar Respuesta'"
+    [styleClass]="'button'"
     (onClick)="openSnackBar()"
   ></app-button>
 
-
+  <button mat-fab (click)="openDialog()">
+    <mat-icon>help</mat-icon>
+  </button>
 
 </div>
+
+
+
+
+
+
+

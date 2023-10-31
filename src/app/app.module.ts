@@ -21,6 +21,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { AntecesorSucesorComponent } from './pages/antecesor-sucesor/antecesor-sucesor.component';
 import { UnidadesDecenasCentenasComponent } from './pages/unidades-decenas-centenas/unidades-decenas-centenas.component';
 import { RectaNumericaComponent } from './pages/recta-numerica/recta-numerica.component';
+import {MatButtonModule} from "@angular/material/button";
+import { DialogComponent } from './components/dialog/dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
@@ -36,7 +39,8 @@ import { RectaNumericaComponent } from './pages/recta-numerica/recta-numerica.co
     NumberIdentificationComponent,
     AntecesorSucesorComponent,
     UnidadesDecenasCentenasComponent,
-    RectaNumericaComponent
+    RectaNumericaComponent,
+    DialogComponent
 
   ],
   imports: [
@@ -48,7 +52,9 @@ import { RectaNumericaComponent } from './pages/recta-numerica/recta-numerica.co
     MatIconModule,
     FormsModule,
     MatSnackBarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

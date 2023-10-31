@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {SnackBarComponent} from "../../components/snack-bar/snack-bar.component";
+import {DialogService} from "../../service/dialog.service";
 
 @Component({
   selector: 'app-basic-operations',
@@ -69,6 +70,10 @@ export class BasicOperationsComponent{
       this.secondNumber = Math.floor(Math.random() * (999 - 100 + 1) + 100);
     }
     this.setOperation(this.operation)
+  }
+
+  openDialog() {
+     window.open("https://www.youtube.com/watch?v=SRPkdB0vJzU", "_blank")
   }
 
 

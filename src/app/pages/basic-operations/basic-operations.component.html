@@ -55,13 +55,10 @@
           (onClick)="setDigits(3)"
         ></app-button>
       </div>
-
-
     </div>
 
 
   </div>
-
   <app-button
     [buttonSize]="'large'"
     [buttonText]="'Verificar Respuesta'"
@@ -69,11 +66,12 @@
     (onClick)="openSnackBar()"
   ></app-button>
 
-
-
-
+  <button mat-fab (click)="openDialog()">
+    <mat-icon>help</mat-icon>
+  </button>
 
 </div>
+
 
 
 
