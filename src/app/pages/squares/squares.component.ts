@@ -1,32 +1,30 @@
-import {Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {SnackBarComponent} from "../../components/snack-bar/snack-bar.component";
-import {DialogService} from "../../service/dialog.service";
 
 @Component({
-  selector: 'app-basic-operations',
-  templateUrl: './basic-operations.component.html',
-  styleUrls: ['./basic-operations.component.css']
+  selector: 'app-squares',
+  templateUrl: './squares.component.html',
+  styleUrls: ['./squares.component.css']
 })
-export class BasicOperationsComponent{
+export class SquaresComponent {
   firstNumber: number = 0;
-  secondNumber: number = 0;
   result: number = 0;
-  operations: string[] = ['+', '-'];
-  operation: string = '+';
+  operations: string[] = ['^'];
+  operation: string = '^';
   inputValue: number = 0;
   isCorrect: boolean = false;
   digitsQuantity: number = 2;
 
   constructor(private _snackBar: MatSnackBar) {
-   this.setDigits(this.digitsQuantity)
-    this.result = this.operation === '+' ? this.firstNumber + this.secondNumber : this.firstNumber - this.secondNumber;
+    this.setDigits(this.digitsQuantity)
+    this.result =  Math.pow(this.firstNumber,2)  ;
   }
 
   handleButtonClick() {
     this.setDigits(this.digitsQuantity)
     this.operation = this.operations[Math.floor(Math.random() * this.operations.length)];
-    this.result = this.operation === '+' ? this.firstNumber + this.secondNumber : this.firstNumber - this.secondNumber;
+    this.result = Math.pow(this.firstNumber,2)  ;
     this.inputValue = 0;
     console.log("Resultado")
     console.log(this.result)
@@ -51,7 +49,7 @@ export class BasicOperationsComponent{
 
   setOperation(operation: string) {
     this.operation = operation;
-    this.result = this.operation === '+' ? this.firstNumber + this.secondNumber : this.firstNumber - this.secondNumber;
+    this.result = Math.pow(this.firstNumber,2)  ;
     console.log(this.result)
   }
 
@@ -59,23 +57,18 @@ export class BasicOperationsComponent{
     this.digitsQuantity = digits;
     if (this.digitsQuantity === 1) {
       this.firstNumber = Math.floor(Math.random() * (9 - 1 + 1) + 1);
-      this.secondNumber = Math.floor(Math.random() * (9 - 1 + 1) + 1);
     }
     else if (this.digitsQuantity === 2) {
       this.firstNumber = Math.floor(Math.random() * (99 - 10 + 1) + 10);
-      this.secondNumber = Math.floor(Math.random() * (99 - 10 + 1) + 10);
     }
     else if (this.digitsQuantity === 3) {
       this.firstNumber = Math.floor(Math.random() * (999 - 100 + 1) + 100);
-      this.secondNumber = Math.floor(Math.random() * (999 - 100 + 1) + 100);
     }
     this.setOperation(this.operation)
   }
 
   openDialog() {
-     window.open("https://www.youtube.com/watch?v=SRPkdB0vJzU", "_blank")
+    window.open("https://www.youtube.com/watch?v=TEQlGPouBxQ", "_blank")
   }
-
-
 
 }

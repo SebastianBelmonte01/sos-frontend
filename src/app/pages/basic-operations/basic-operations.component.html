@@ -1,6 +1,5 @@
 <app-navbar></app-navbar>
 <div class="container center-content">
-
   <div class="numbers">
     <div>
       <app-numbers [myNumber]="operation"></app-numbers>
@@ -55,13 +54,10 @@
           (onClick)="setDigits(3)"
         ></app-button>
       </div>
-
-
     </div>
 
 
   </div>
-
   <app-button
     [buttonSize]="'large'"
     [buttonText]="'Verificar Respuesta'"
@@ -69,11 +65,12 @@
     (onClick)="openSnackBar()"
   ></app-button>
 
-
-
-
+  <button mat-fab (click)="openDialog()">
+    <mat-icon>help</mat-icon>
+  </button>
 
 </div>
+
 
 
 
