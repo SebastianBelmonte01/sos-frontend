@@ -7,6 +7,7 @@ import { NumberIdentificationComponent } from './pages/number-identification/num
 import { AntecesorSucesorComponent } from './pages/antecesor-sucesor/antecesor-sucesor.component';
 import { UnidadesDecenasCentenasComponent } from './pages/unidades-decenas-centenas/unidades-decenas-centenas.component';
 import { RectaNumericaComponent } from './pages/recta-numerica/recta-numerica.component';
+import { SumasRestasBasicoComponent } from './pages/sumas-restas-basico/sumas-restas-basico.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'number-identification', component: NumberIdentificationComponent },
   { path: 'antecesor-sucesor', component: AntecesorSucesorComponent },
   { path: 'unidades-decenas-centenas', component: UnidadesDecenasCentenasComponent },
-  { path: 'recta-numerica', component: RectaNumericaComponent }
+  { path: 'recta-numerica', component: RectaNumericaComponent },
+  { path: 'suma-resta-basico', component: SumasRestasBasicoComponent }
 ];
 
 @NgModule({

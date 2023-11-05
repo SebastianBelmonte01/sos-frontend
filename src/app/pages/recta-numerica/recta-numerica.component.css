@@ -75,3 +75,9 @@
     background-color: #f8d7da;
     color: #721c24;
 }
+iframe {
+    display: block; /* Elimina cualquier espacio extra y hace que el elemento se comporte como un bloque */
+    width: 100%; /* Asegura que el iframe ocupe el 100% del ancho de su contenedor */
+    height: 100%; /* Asegura que el iframe ocupe el 100% de la altura de su contenedor */
+    border: none; /* Elimina cualquier borde que pueda tener el iframe */
+  }

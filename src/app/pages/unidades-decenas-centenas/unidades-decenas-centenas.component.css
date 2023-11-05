@@ -1,30 +1,104 @@
-.udc-container {
+/* General Styles */
+body, html {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .container {
+    max-width: 1200px; /* Tamaño del contenedor aumentado */
+    margin: 30px auto;
+    padding: 30px;
     text-align: center;
-    padding: 20px;
-}
-
-.number-display {
-    font-size: 2rem;
-    margin: 20px 0;
-    border: 2px solid black;
-    padding: 10px;
+  }
+  
+  /* Score Styles */
+  .score-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+  }
+  
+  .score {
+    font-size: 2em; /* Tamaño de fuente más grande para las puntuaciones */
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  .score .score-value.correct {
+    color: #4CAF50; /* Verde para correctas */
+  }
+  
+  .score .score-value.incorrect {
+    color: #F44336; /* Rojo para incorrectas */
+  }
+  
+  /* Number Display Styles */
+  .number-display {
+    font-size: 10em; /* Tamaño de fuente extremadamente grande para los números */
+    margin: 50px 0; /* Más espacio alrededor del número */
+    padding: 30px; /* Espaciado interno más grande */
+    background-color: #E8EAF6; /* Color de fondo suave */
+    border-radius: 20px; /* Bordes más redondeados */
     display: inline-block;
-}
-
-.options button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 1rem;
+  }
+  
+  /* Button Styles */
+  .button {
+    font-size: 3em; /* Tamaño de fuente muy grande para los botones */
+    padding: 30px 60px; /* Espaciado interno muy grande */
+    margin: 10px; /* Espacio entre botones */
+    border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-.options button:hover {
-    background-color: #ddd;
-}
-
-.feedback {
-    margin-top: 20px;
-    color: #4D9DDE;
-    font-weight: bold;
-}
+  }
+  
+  .button.unidad {
+    background-color: #FFC107; /* Color para Unidad */
+  }
+  
+  .button.decena {
+    background-color: #03A9F4; /* Color para Decena */
+  }
+  
+  .button.centena {
+    background-color: #9C27B0; /* Color para Centena */
+  }
+  
+  .button:hover {
+    opacity: 0.8; /* Efecto para el hover */
+  }
+  
+  /* Alert Styles */
+  .alert {
+    font-size: 2.5em; /* Tamaño de fuente más grande para las alertas */
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+    transition: opacity 0.5s;/* Transición para la alerta */
+  }
+  
+  .alert.correct {
+    background-color: #4CAF50; /* Verde para correcto */
+    color: white;
+  }
+  
+  .alert.incorrect {
+    background-color: #F44336; /* Rojo para incorrecto */
+    color: white;
+  }
+  
+  /* Modal Styles */
+  .modal-content {
+    border-radius: 20px;
+  }
+  
+  .modal-header, .modal-footer {
+    border: none;
+  }
+  
+  .modal-body {
+    font-size: 2em;
+  }
+  
+  /* Agrega más estilos según sea necesario */
+  

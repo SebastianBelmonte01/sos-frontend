@@ -1,42 +1,60 @@
 <app-navbar></app-navbar>
-<div class="udc-container">
-    <h2>Clasifica el Número</h2>
+<div class="container">
+  <h2>CLASIFICA EL NUMERO ENTRE UNIDAD, DECENA Y CENTENA</h2>
+  <div class="score-container">
+    <div class="score">Correctas: <span class="score-value correct">{{correctCount}}</span></div>
+    <div class="score">Incorrectas: <span class="score-value incorrect">{{incorrectCount}}</span></div>
+    <div class="score">Intentos: <span class="score-value">{{attempts}} / {{totalRounds}}</span></div>
+  </div>
 
-    <div class="number-display">
-        {{ currentNumber }}
+  <!-- Ajustes al mensaje de alerta para mejorar la visibilidad -->
+  <div *ngIf="message" class="alert" [ngClass]="{'correct': message === '¡Correcto!', 'incorrect': message !== '¡Correcto!'}">
+    {{ message }}
+  </div>
+
+  <div class="number-container">
+    <div class="number-display">{{currentNumber}}</div>
+    <div class="number-choices">
+      <!-- Botones con clases para colores específicos -->
+      <app-button [buttonSize]="'large'" [buttonText]="'Unidad'" [styleClass]="'button unidad'" (onClick)="checkAnswer('unidad')"></app-button>
+      <app-button [buttonSize]="'large'" [buttonText]="'Decena'" [styleClass]="'button decena'" (onClick)="checkAnswer('decena')"></app-button>
+      <app-button [buttonSize]="'large'" [buttonText]="'Centena'" [styleClass]="'button centena'" (onClick)="checkAnswer('centena')"></app-button>
     </div>
+  </div>
 
-    <div class="options">
-        <app-button
-        [buttonSize]="'large'"
-        [buttonText]="'Unidad'"
-        [styleClass]="'button'"
-        (onClick)="checkAnswer('unidad')"
-      ></app-button>
-      
-      <app-button
-      [buttonSize]="'large'"
-      [buttonText]="'Decena'"
-      [styleClass]="'button'"
-      (onClick)="checkAnswer('decena')"
-    ></app-button>
-    <app-button
-    [buttonSize]="'large'"
-    [buttonText]="'Centena'"
-    [styleClass]="'button'"
-    (onClick)="checkAnswer('centena')"
-  ></app-button>
 
+  <!-- Modal para mostrar resultados al final del juego -->
+  <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="resultModalLabel">Fin del Juego</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Imagen de ganador si el usuario gana -->
+          <p [ngClass]="{'text-success': correctCount > incorrectCount, 'text-danger': correctCount <= incorrectCount}">
+            {{ message }}
+          </p>
+          <img *ngIf="correctCount > incorrectCount" src="assets/pinFeliz.png" class="img-fluid" alt="Ganaste">
+          <!-- Imagen de perdedor si el usuario pierde o empata -->
+          <img *ngIf="correctCount <= incorrectCount" src="assets/pinTriste.png" class="img-fluid" alt="Perdiste">
+          
+          <p [ngClass]="{'text-success': correctCount > incorrectCount, 'text-danger': correctCount <= incorrectCount}">
+            Correctas: {{ correctCount }}
+          </p>
+          <p [ngClass]="{'text-success': incorrectCount < correctCount, 'text-danger': incorrectCount >= correctCount}">
+            Incorrectas: {{ incorrectCount }}
+          </p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="startNewGame()">Jugar de Nuevo</button>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="feedback" *ngIf="feedbackMessage">
-        {{ feedbackMessage }}
-    </div>
-
-    <app-button
-    [buttonSize]="'large'"
-    [buttonText]="'Otro número'"
-    [styleClass]="'button'"
-    (onClick)="generateNumber()"
-  ></app-button>
 </div>

@@ -12,8 +12,8 @@
   }
   
   .apple-container img {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
   }
   
   .input-container {
@@ -27,9 +27,138 @@
     border: 1px solid #007bff;
   }
   
-  input {
-    padding: 0.5rem;
-    font-size: 2rem;
-    width: 100px;
+  input [type="number"] {
+    padding: 1rem;
+    font-size: 3rem;
+    width: 200px;
     text-align: center;
   }
+  .score-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .alert {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 3rem;
+  }
+  
+  .correct {
+    color: #4CAF50;
+  }
+  
+  .incorrect {
+    color: #F44336;
+  }
+
+  .score-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    font-size: 2.5rem; /* Ajusta el tamaño del texto a tus necesidades */
+  }
+  
+  .score-value-correct {
+    font-weight: bold;
+    color: #4CAF50;
+  }
+  .score-value-incorrect {
+    font-weight: bold;
+    color: #F44336;
+  }
+
+
+  .apple-count-input {
+    font-size: 40px; /* Aumenta el tamaño del texto dentro del input */
+    width: 100%; /* Utiliza todo el ancho disponible de su contenedor */
+    max-width: 120px; /* Establece un ancho máximo */
+    padding: 15px 20px; /* Añade espacio dentro del input */
+    margin: 10px 0; /* Añade espacio alrededor del input */
+    border: 2px solid #ccc; /* Establece el borde */
+    border-radius: 5px; /* Bordes redondeados para un aspecto suave */
+    box-sizing: border-box; /* El padding y border no afectan el ancho total */
+  }
+  
+  .apple-count-input:focus {
+    border-color: #66afe9; /* Cambia el color del borde al enfocar el input */
+    outline: none; /* Elimina el contorno predeterminado al enfocar */
+  }
+  .pregunta{
+    font-size: 2rem;
+    font-weight: bold;
+  } 
+  /* Aumentar el tamaño del diálogo modal */
+.modal-dialog {
+  max-width: 800px; /* Ancho máximo más grande */
+}
+
+/* Estilos para el contenido del modal */
+.modal-content {
+  padding: 20px; /* Añadir más padding */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+}
+
+/* Estilos para el encabezado del modal */
+.modal-header {
+  background: #007bff; /* Fondo azul para la cabecera */
+  color: white; /* Texto en blanco para contraste */
+  padding: 15px; /* Padding más grande */
+  border-top-left-radius: 10px; /* Redondear esquinas superiores */
+  border-top-right-radius: 10px; /* Redondear esquinas superiores */
+}
+
+/* Personalización para el título del modal */
+.modal-title {
+  font-size: 24px; /* Tamaño de fuente más grande */
+  font-weight: bold; /* Fuente en negrita */
+}
+
+/* Estilos para el botón de cerrar */
+.close {
+  font-size: 30px; /* Hacer el botón de cerrar más grande */
+  color: white; /* Cambiar el color para que destaque sobre el fondo azul */
+}
+
+/* Personalización del cuerpo del modal */
+.modal-body {
+  font-size: 30px; /* Aumentar el tamaño de la fuente para mejor lectura */
+  line-height: 1.5; /* Espacio entre líneas para mejor lectura */
+}
+
+/* Personalización para los botones del pie de modal */
+.modal-footer .btn {
+  padding: 10px 20px; /* Padding más grande para los botones */
+  font-size: 18px; /* Tamaño de fuente más grande para los botones */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Sombra para los botones */
+}
+
+/* Efecto de hover para los botones */
+.modal-footer .btn:hover {
+  transform: scale(1.05); /* Efecto de crecimiento al pasar el ratón por encima */
+}
+
+/* Efecto de focus para los botones */
+.modal-footer .btn:focus {
+  box-shadow: 0 0 8px rgba(0, 68, 204, 0.6); /* Sombra más fuerte al hacer focus */
+  outline: none; /* Eliminar el borde de focus por defecto */
+}
+/* Clases para los colores de texto */
+.text-success {
+  color: green; /* Verde para cuando el usuario gana */
+}
+
+.text-danger {
+  color: red; /* Rojo para cuando el usuario pierde */
+}
+
+/* Estilos adicionales para la imagen */
+.img-fluid {
+  max-width: 50%;
+  height: auto;
+  margin-bottom: 15px; /* Espaciado debajo de la imagen */
+}

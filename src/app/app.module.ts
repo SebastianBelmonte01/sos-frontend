@@ -21,6 +21,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { AntecesorSucesorComponent } from './pages/antecesor-sucesor/antecesor-sucesor.component';
 import { UnidadesDecenasCentenasComponent } from './pages/unidades-decenas-centenas/unidades-decenas-centenas.component';
 import { RectaNumericaComponent } from './pages/recta-numerica/recta-numerica.component';
+import { SumasRestasBasicoComponent } from './pages/sumas-restas-basico/sumas-restas-basico.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { RectaNumericaComponent } from './pages/recta-numerica/recta-numerica.co
     NumberIdentificationComponent,
     AntecesorSucesorComponent,
     UnidadesDecenasCentenasComponent,
-    RectaNumericaComponent
+    RectaNumericaComponent,
+    SumasRestasBasicoComponent
 
   ],
   imports: [

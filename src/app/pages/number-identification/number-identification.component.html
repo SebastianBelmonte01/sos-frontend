@@ -1,27 +1,74 @@
 <app-navbar></app-navbar>
 <div class="container">
+    <div class="score-container">
+      <div class="score">Correctas: <span class="score-value-correct">{{correctCount}}</span></div>
+      <div class="score">Incorrectas: <span class="score-value-incorrect">{{incorrectCount}}</span></div>
+      <div>Intentos: {{attempts}} / {{totalChances}}</div>
+  </div>
+
+    <div *ngIf="message" class="alert" [class.correct]="message === '¡Correcto!'" [class.incorrect]="message !== '¡Correcto!'">
+        {{ message }}
+    </div>
+
     <div class="apple-container">
-      <ng-container *ngFor="let apple of apples">
-        <img src="assets/manzana.jpg" alt="Manzana">
-      </ng-container>
+        <ng-container *ngFor="let apple of apples">
+            <img src="assets/manzana.jpg" alt="Manzana">
+        </ng-container>
     </div>
     
     <div class="input-container">
-      <label for="appleCount">¿Cuántas manzanas ves?</label>
-      <input type="number" id="appleCount" [(ngModel)]="userInput">
-      <app-button
-      [buttonSize]="'large'"
-      [buttonText]="'Verificar'"
-      [styleClass]="'button'"
-      (onClick)="checkAnswer()"
-    ></app-button>
-    <app-button
-    [buttonSize]="'large'"
-    [buttonText]="'Nueva cantidad'"
-    [styleClass]="'button'"
-    (onClick)="generateRandomApples()"
-  ></app-button>
-
-
+        <label for="appleCount" class="pregunta">¿Cuántas manzanas ves?</label>
+        <input type="number" id="appleCount" class="apple-count-input" [(ngModel)]="userInput">
+        <app-button
+            [buttonSize]="'large'"
+            [buttonText]="'Verificar'"
+            [styleClass]="'button'"
+            (onClick)="checkAnswer()">
+        </app-button>
+        <app-button
+            [buttonSize]="'large'"
+            [buttonText]="'Nueva cantidad'"
+            [styleClass]="'button'"
+            (onClick)="generateRandomApples()">
+        </app-button>
+        <app-button
+        [buttonSize]="'large'"
+        [buttonText]="'Juego Nuevo'"
+        [styleClass]="'button'"
+        (onClick)="startNewGame()">
+        </app-button>
     </div>
-  </div>
+    <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="resultModalLabel">Fin del Juego</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Imagen de ganador si el usuario gana -->
+            <p [ngClass]="{'text-success': correctCount > incorrectCount, 'text-danger': correctCount <= incorrectCount}">
+              {{ resultMessage }}
+            </p>
+            <img *ngIf="correctCount > incorrectCount" src="assets/pinFeliz.png" class="img-fluid" alt="Ganaste">
+            <!-- Imagen de perdedor si el usuario pierde o empata -->
+            <img *ngIf="correctCount <= incorrectCount" src="assets/pinTriste.png" class="img-fluid" alt="Perdiste">
+            
+            <p [ngClass]="{'text-success': correctCount > incorrectCount, 'text-danger': correctCount <= incorrectCount}">
+              Correctas: {{ correctCount }}
+            </p>
+            <p [ngClass]="{'text-success': incorrectCount < correctCount, 'text-danger': incorrectCount >= correctCount}">
+              Incorrectas: {{ incorrectCount }}
+            </p>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="startNewGame()">Jugar de Nuevo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+</div>
