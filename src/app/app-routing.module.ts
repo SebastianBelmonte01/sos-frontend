@@ -9,6 +9,7 @@ import { UnidadesDecenasCentenasComponent } from './pages/unidades-decenas-cente
 import { RectaNumericaComponent } from './pages/recta-numerica/recta-numerica.component';
 import {SquaresComponent} from "./pages/squares/squares.component";
 import { SumasRestasBasicoComponent } from './pages/sumas-restas-basico/sumas-restas-basico.component';
+import { MultiplicacionBasicoComponent } from './pages/multiplicacion-basico/multiplicacion-basico.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'recta-numerica', component: RectaNumericaComponent },
   { path: 'squares', component: SquaresComponent },
   { path: 'sumas-restas-basico', component: SumasRestasBasicoComponent },
+  { path: 'multiplicaciones-basico', component: MultiplicacionBasicoComponent }
 ];
 
 @NgModule({

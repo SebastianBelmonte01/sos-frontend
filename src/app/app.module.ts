@@ -26,6 +26,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import { SquaresComponent } from './pages/squares/squares.component';
 import { SumasRestasBasicoComponent } from './pages/sumas-restas-basico/sumas-restas-basico.component';
+import { MultiplicacionBasicoComponent } from './pages/multiplicacion-basico/multiplicacion-basico.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { SumasRestasBasicoComponent } from './pages/sumas-restas-basico/sumas-re
     RectaNumericaComponent,
     SumasRestasBasicoComponent,
     DialogComponent,
-    SquaresComponent
+    SquaresComponent,
+    MultiplicacionBasicoComponent
 
   ],
   imports: [
